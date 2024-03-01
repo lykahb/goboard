@@ -1,0 +1,151 @@
+<svg id="svg" style="height: 100%; width: 100%;">
+    <desc>Created with Snap</desc>
+    <defs>
+        <circle fill="#000000" r="50" style="stroke-width: 0;" id="circleSiqflro8y1"></circle>
+        <circle fill="#ffffff" r="50" style="stroke-width: 0;" id="circleSiqflro8y3"></circle>
+        <rect x="0" y="0" width="320" height="100" fill="url('#patternSiqflro8y6')" stroke="#d3a553"
+              style="stroke-width: 0.5; stroke-dasharray: 2, 2;" id="rectSiqflro8y4"></rect>
+        <pattern x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse" id="patternSiqflro8y6"
+                 viewBox="0 0 200 200">
+            <image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="wood.jpg" preserveAspectRatio="none"
+                   width="452" height="340"></image>
+        </pattern>
+        <g id="gSiqflro8yh">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rectSiqflro8y4"></use>
+            <g stroke="#000000" style="stroke-width: 1;">
+                <line x1="0" x2="55" y1="50" y2="50"></line>
+                <line x1="105" x2="160" y1="50" y2="50"></line>
+                <line x1="215" x2="265" y1="50" y2="50"></line>
+                <line x1="55" x2="55" y1="0" y2="50"></line>
+                <line x1="160" x2="160" y1="0" y2="50"></line>
+                <line x1="265" x2="265" y1="0" y2="50"></line>
+            </g>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#circleSiqflro8y1" x="55" y="50"></use>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#circleSiqflro8y3" x="265" y="50"></use>
+        </g>
+        <g id="gSiqflro8ys">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rectSiqflro8y4"></use>
+            <g stroke="#000000" style="stroke-width: 1;">
+                <line x1="55" x2="105" y1="50" y2="50"></line>
+                <line x1="160" x2="215" y1="50" y2="50"></line>
+                <line x1="265" x2="320" y1="50" y2="50"></line>
+                <line x1="55" x2="55" y1="0" y2="50"></line>
+                <line x1="160" x2="160" y1="0" y2="50"></line>
+                <line x1="265" x2="265" y1="0" y2="50"></line>
+            </g>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#circleSiqflro8y1" x="55" y="50"></use>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#circleSiqflro8y3" x="265" y="50"></use>
+        </g>
+        <g id="gSiqflro8y13">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rectSiqflro8y4"></use>
+            <g stroke="#000000" style="stroke-width: 1;">
+                <line x1="0" x2="55" y1="50" y2="50"></line>
+                <line x1="105" x2="160" y1="50" y2="50"></line>
+                <line x1="215" x2="265" y1="50" y2="50"></line>
+                <line x1="55" x2="55" y1="50" y2="100"></line>
+                <line x1="160" x2="160" y1="50" y2="100"></line>
+                <line x1="265" x2="265" y1="50" y2="100"></line>
+            </g>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#circleSiqflro8y1" x="55" y="50"></use>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#circleSiqflro8y3" x="265" y="50"></use>
+        </g>
+        <g id="gSiqflro8y1e">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rectSiqflro8y4"></use>
+            <g stroke="#000000" style="stroke-width: 1;">
+                <line x1="55" x2="105" y1="50" y2="50"></line>
+                <line x1="160" x2="215" y1="50" y2="50"></line>
+                <line x1="265" x2="320" y1="50" y2="50"></line>
+                <line x1="55" x2="55" y1="50" y2="100"></line>
+                <line x1="160" x2="160" y1="50" y2="100"></line>
+                <line x1="265" x2="265" y1="50" y2="100"></line>
+            </g>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#circleSiqflro8y1" x="55" y="50"></use>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#circleSiqflro8y3" x="265" y="50"></use>
+        </g>
+        <g id="gSiqflro8y1n">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rectSiqflro8y4"></use>
+            <g stroke="#000000" style="stroke-width: 1;">
+                <line x1="0" x2="320" y1="50" y2="50"></line>
+                <line x1="55" x2="55" y1="50" y2="100"></line>
+                <line x1="160" x2="160" y1="50" y2="100"></line>
+                <line x1="265" x2="265" y1="50" y2="100"></line>
+            </g>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#circleSiqflro8y1" x="55" y="50"></use>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#circleSiqflro8y3" x="265" y="50"></use>
+        </g>
+        <g id="gSiqflro8y1w">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rectSiqflro8y4"></use>
+            <g stroke="#000000" style="stroke-width: 1;">
+                <line x1="0" x2="320" y1="50" y2="50"></line>
+                <line x1="55" x2="55" y1="0" y2="50"></line>
+                <line x1="160" x2="160" y1="0" y2="50"></line>
+                <line x1="265" x2="265" y1="0" y2="50"></line>
+            </g>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#circleSiqflro8y1" x="55" y="50"></use>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#circleSiqflro8y3" x="265" y="50"></use>
+        </g>
+        <g id="gSiqflro8y27">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rectSiqflro8y4"></use>
+            <g stroke="#000000" style="stroke-width: 1;">
+                <line x1="55" x2="105" y1="50" y2="50"></line>
+                <line x1="160" x2="215" y1="50" y2="50"></line>
+                <line x1="265" x2="320" y1="50" y2="50"></line>
+                <line x1="55" x2="55" y1="0" y2="100"></line>
+                <line x1="160" x2="160" y1="0" y2="100"></line>
+                <line x1="265" x2="265" y1="0" y2="100"></line>
+            </g>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#circleSiqflro8y1" x="55" y="50"></use>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#circleSiqflro8y3" x="265" y="50"></use>
+        </g>
+        <g id="gSiqflro8y2i">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rectSiqflro8y4"></use>
+            <g stroke="#000000" style="stroke-width: 1;">
+                <line x1="0" x2="55" y1="50" y2="50"></line>
+                <line x1="105" x2="160" y1="50" y2="50"></line>
+                <line x1="215" x2="265" y1="50" y2="50"></line>
+                <line x1="55" x2="55" y1="0" y2="100"></line>
+                <line x1="160" x2="160" y1="0" y2="100"></line>
+                <line x1="265" x2="265" y1="0" y2="100"></line>
+            </g>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#circleSiqflro8y1" x="55" y="50"></use>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#circleSiqflro8y3" x="265" y="50"></use>
+        </g>
+        <g id="gSiqflro8y2r">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rectSiqflro8y4"></use>
+            <g stroke="#000000" style="stroke-width: 1;">
+                <line x1="0" x2="320" y1="50" y2="50"></line>
+                <line x1="55" x2="55" y1="0" y2="100"></line>
+                <line x1="160" x2="160" y1="0" y2="100"></line>
+                <line x1="265" x2="265" y1="0" y2="100"></line>
+            </g>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#circleSiqflro8y1" x="55" y="50"></use>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#circleSiqflro8y3" x="265" y="50"></use>
+        </g>
+        <g id="gSiqflro8y52">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#gSiqflro8yh" x="0" y="0"></use>
+        </g>
+        <line x1="0" x2="1280" y1="0" y2="0" stroke="#000000" id="lineSiqflro8y55" style="stroke-width: 1;"></line>
+        <g id="gSiqflro8y56">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lineSiqflro8y55" y="0"></use>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lineSiqflro8y55" y="160"></use>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lineSiqflro8y55" y="320"></use>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lineSiqflro8y55" y="480"></use>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lineSiqflro8y55" y="640"></use>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lineSiqflro8y55" y="800"></use>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lineSiqflro8y55" y="960"></use>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lineSiqflro8y55" y="1120"></use>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lineSiqflro8y55" y="1280"></use>
+        </g>
+        <g id="gSiqflro8y5g">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#gSiqflro8y56"></use>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#gSiqflro8y56"
+                 transform="matrix(0,1,-1,0,1280,0)"></use>
+        </g>
+        <g id="gSiqflro8y5l">
+            <rect width="1760" height="1760" fill="url('#patternSiqflro8y6')"></rect>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#gSiqflro8y5g" x="240" y="240"></use>
+        </g>
+    </defs>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#gSiqflro8y52" x="1920"></use>
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#gSiqflro8y5l"></use>
+</svg>

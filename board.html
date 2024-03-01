@@ -1,0 +1,208 @@
+<html>
+<head>
+    <script type="application/javascript" src="snap.svg.js"></script>
+
+</head>
+<body>
+<svg id="svg" style="height: 100%; width: 100%;"></svg>
+<script type="application/javascript">
+    function makeDefs(s, c) {
+        var blackStone = s.circle().toDefs();
+        blackStone.attr({
+            fill: "#000000",
+            strokeWidth: 0,
+            r: c.stoneSize / 2
+        });
+        var whiteStone = s.circle().toDefs();
+        whiteStone.attr({
+            fill: "#ffffff",
+            strokeWidth: 0,
+            r: c.stoneSize / 2
+        });
+        var wood = s.image("wood.jpg").toPattern(0, 0, 200, 200);
+        var stripe = s.rect(0, 0, c.stripeSize, c.stoneSize).toDefs().attr({
+            fill: wood,
+            stroke: "#d3a553",
+            "stroke-width": 0.5,
+            "stroke-dasharray": "2,2"
+        });
+        return {
+            blackStone: blackStone,
+            whiteStone: whiteStone,
+            stripe: stripe,
+            wood: wood
+        }
+    }
+    function makeStripes(s, c, defs) {
+        var stripes = [
+            makeStripe(s, c, defs, true, false, true, false),
+            makeStripe(s, c, defs, true, false, false, true),
+            makeStripe(s, c, defs, false, true, true, false),
+            makeStripe(s, c, defs, false, true, false, true)
+        ];
+        var borderStripes = [
+            makeStripe(s, c, defs, false, true, true, true),
+            makeStripe(s, c, defs, true, false, true, true),
+            makeStripe(s, c, defs, true, true, false, true),
+            makeStripe(s, c, defs, true, true, true, false)
+        ];
+        for (var i = 0; i < c.dimensions - 2; i++) {
+            stripes = stripes.concat(borderStripes);
+        }
+        var innerStripe = makeStripe(s, c, defs, true, true, true, true);
+        for (var i = 0; i < (c.dimensions - 2) * (c.dimensions - 2); i++) {
+            stripes.push(innerStripe);
+        }
+
+        var stripeGroup = s.group();
+        var maxRows = 10;
+        for (var i = 0; i < stripes.length; i++) {
+            stripeGroup.add(stripes[i].use().attr({
+                x: Math.floor(i / maxRows) * c.stripeSize,
+                y: i % maxRows * c.stoneSize
+            }));
+        }
+        return stripeGroup.toDefs();
+    }
+    function makeStripe(s, c, defs, up, down, left, right) {
+        var grid = [];
+
+        var y = c.stoneSize / 2;
+        if (left && right) {
+            grid.push(s.line(0, y, c.stripeSize, y));
+        } else {
+            if (left) {
+                var x = 0;
+                grid.push(s.line(x, y, x + c.borderSize + c.stoneSize / 2, y));
+                x += c.borderSize + c.stoneSize;
+                grid.push(s.line(x, y, x + c.blankSpaceSize / 2, y));
+                x += c.blankSpaceSize;
+                grid.push(s.line(x, y, x + c.stoneSize / 2, y));
+            } else if (right) {
+                var x = c.borderSize + c.stoneSize / 2;
+                grid.push(s.line(x, y, x + c.stoneSize / 2, y));
+                x += c.stoneSize / 2 + c.blankSpaceSize / 2;
+                grid.push(s.line(x, y, x + c.blankSpaceSize / 2, y));
+                x += c.blankSpaceSize / 2 + c.stoneSize / 2;
+                grid.push(s.line(x, y, x + c.stoneSize / 2 + c.borderSize, y));
+            }
+        }
+        var y0 = up ? 0 : c.stoneSize / 2;
+        var y1 = down ? c.stoneSize : c.stoneSize / 2;
+        var x = c.borderSize + c.stoneSize / 2;
+        grid.push(s.line(x, y0, x, y1));
+        x += c.stoneSize / 2 + c.blankSpaceSize / 2;
+        grid.push(s.line(x, y0, x, y1));
+        x += c.blankSpaceSize / 2 + c.stoneSize / 2;
+        grid.push(s.line(x, y0, x, y1));
+
+        grid = s.g.apply(s, grid).attr(c.lineStyle);
+        var blackStone = defs.blackStone.use().attr({
+            x: c.borderSize + c.stoneSize / 2, y: c.stoneSize / 2
+        });
+        var whiteStone = defs.whiteStone.use().attr({
+            x: c.borderSize + 1.5 * c.stoneSize + c.blankSpaceSize, y: c.stoneSize / 2
+        });
+        return s.g(defs.stripe.use(), grid, blackStone, whiteStone).toDefs();
+    }
+
+    function makeBoard(s, c, defs) {
+        // Size between the grid and the ridge
+        var outerSize = c.stripeSize - c.borderSize - c.windowSize / 2;
+        var boardSize = (c.dimensions - 1) * c.cellSize + 2 * outerSize;
+        var board = s.rect().attr({
+            width: boardSize,
+            height: boardSize,
+            fill: defs.wood
+        });
+        var line = s.line(0, 0, (c.dimensions - 1) * c.cellSize, 0).attr(c.lineStyle).toDefs();
+        var lines = s.g().toDefs();
+        for (var i = 0; i < c.dimensions; i++) {
+            lines.add(line.use().attr({
+                y: i * c.cellSize
+            }));
+        }
+        var matrix = new Snap.Matrix();
+        matrix.rotate(90, (c.dimensions - 1) * c.cellSize / 2, (c.dimensions - 1) * c.cellSize / 2);
+        var grid = s.g().toDefs().add(lines.use(), lines.use().transform(matrix.toTransformString())).use().attr({
+            x: outerSize,
+            y: outerSize,
+        });
+
+        var cuts = s.g().attr({
+            stroke: "#000000",
+            "stroke-width": 3,
+            "stroke-dasharray": "2,2"
+        }).toDefs();
+        var verticalCut = s.g().toDefs().add(s.line(0, 0, 0, c.stoneSize), s.line(c.stoneSize, 0, c.stoneSize, c.stoneSize));
+        matrix = new Snap.Matrix();
+        matrix.rotate(90, c.stoneSize / 2, c.stoneSize / 2);
+        var horizontalCut = verticalCut.use().transform(matrix.toTransformString()).toDefs();
+        var cutEven = s.g().toDefs();
+        var cutOdd = s.g().toDefs();
+        for (var i = 0; i < c.dimensions; i++) {
+            var offset = outerSize - c.windowSize / 2 + i * c.cellSize;
+            cutEven.add((i % 2 == 0 ? verticalCut : horizontalCut).use().attr({x: offset}));
+            cutOdd.add((i % 2 != 0 ? verticalCut : horizontalCut).use().attr({x: offset}));
+        }
+        for (var i = 0; i < c.dimensions; i++) {
+            var offset = outerSize - c.windowSize / 2 + i * c.cellSize;
+            cuts.add((i % 2 == 0 ? cutEven : cutOdd).use().attr({y: offset}));
+        }
+        return s.g().toDefs().add(board, grid, cuts);
+    }
+
+    function makeLimiters(s, c, defs) {
+        var sideNum = c.dimensions * 4; // 1-2, 2-8, 3-12
+        var centralNum = c.dimensions * c.dimensions - sideNum / 2; // 2-0, 3-3
+        var allFlaps = c.dimensions * c.dimensions * 2 == centralNum * 2 + sideNum;
+        var len = 2 * c.cellSize - c.windowSize - 2 * c.gapSize,
+                flap = c.windowSize / 3;
+        var centralLimiter = s.path(Snap.format("M0,0h{len}v{flap}h{lenFlap}v{win}h-{lenFlap}v{flap}h-{len}z", {
+            len: len,
+            flap: flap,
+            lenFlap: len + flap,
+            win: c.windowSize
+        })).attr({fill: "white"}).toDefs();
+
+        var sideLimiter = s.path(Snap.format("M0,0h{len}v{flap}h{flap}v{win}h-{flap}v{flap}h-{len}z", {
+            len: len,
+            flap: flap,
+            win: c.windowSize
+        })).attr({fill: "white"}).toDefs();
+        s.use(centralLimiter).drag();
+        s.use(sideLimiter).drag();
+    }
+
+    window.onload = function () {
+        var c = {
+            windowSize: 100,
+            gapSize: 10,
+            stoneSize: 100,
+            blankSpaceSize: 110,
+            borderSize: 10,
+            dimensions: 5,
+            lineStyle: {
+                stroke: "black",
+                "stroke-width": 5
+            }
+        };
+        // c.stripeSize = c.borderSize + 2 * c.cellSize - c.gapSize;
+        c.stripeSize = 2 * c.borderSize + 2 * c.stoneSize + c.blankSpaceSize;
+        c.cellSize = (c.borderSize + 2 * c.stoneSize + c.blankSpaceSize + c.gapSize) / 2;
+
+        var s = Snap("#svg");
+        var defs = makeDefs(s, c);
+        var stripeGroup = makeStripes(s, c, defs);
+        s.use(stripeGroup).attr({x: (c.dimensions + 3) * c.cellSize});
+        var board = makeBoard(s, c, defs);
+        s.use(board);
+
+        makeLimiters(s, c, defs);
+        // debug
+        s.use(makeStripe(s, c, defs, true, true, true, true)).drag();
+    };
+
+</script>
+</body>
+</html>
